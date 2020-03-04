@@ -8,15 +8,20 @@ public class UserDTO implements Serializable{
 
 	private static final long serialVersionUID = 4545864587995944260L;
 	private int	userId;                     
-	private String userName;                
+	private String userName;
+	private String password;
 	private String ini;                 
 	private List<String> roles;
-	//TODO Add relevant fields
 	
 	public UserDTO() {
+		this.userId = userId;
+		this.userName = userName;
+		this.password = password;
+		this.ini = ini;
 		this.roles = new ArrayList<>();
 	}
-	
+
+
 	public int getUserId() {
 		return userId;
 	}
@@ -54,12 +59,14 @@ public class UserDTO implements Serializable{
 	public boolean removeRole(String role){
 		return this.roles.remove(role);
 	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getPassword(){ return password; }
 
 	@Override
 	public String toString() {
 		return "UserDTO [userId=" + userId + ", userName=" + userName + ", ini=" + ini + ", roles=" + roles + "]";
 	}
-	
-	
-	
+
 }

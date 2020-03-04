@@ -2,6 +2,7 @@
   <library name="UserDAODiscImplementation">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/CDIO1/UserDAODiscImplementation.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/mariadb-java-client-2.5.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
