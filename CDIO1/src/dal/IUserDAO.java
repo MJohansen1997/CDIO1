@@ -6,6 +6,8 @@ import dto.UserDTO;
 
 public interface IUserDAO {
 
+	//Shania test
+
 	UserDTO getUser(int userId) throws DALException, SQLException, ClassNotFoundException;
 	List<UserDTO> getUserList() throws DALException, SQLException, ClassNotFoundException;
 	void createUser(UserDTO user) throws DALException, SQLException, ClassNotFoundException;
