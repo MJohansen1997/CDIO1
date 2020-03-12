@@ -40,9 +40,23 @@ public class UserTUI {
                 break;
             case 3:
                 //update
-                System.out.println("What information do you want to update?\n1. username\n2.initials \n 3.role");
-                updatenr = input.nextInt();
-                userDAO.updateUser(userID,  userName);
+                System.out.println("What information do you want to update?\n1. username\n2.initials \n 3.password \n 4. all informations");
+                int updatenr = input.nextInt();
+                userDAO.updateUser();
+                if (updatenr==1){
+                    userDAO.updateUserName(userID,  userName);
+                }
+                if (updatenr==2){
+                    userDAO.updateInitials(userID, Ini);
+                }
+                if (updatenr==3){
+                    userDAO.updatePassword(userID, pass);
+                }
+                if (updatenr==4){
+                    userDAO.updateUserName(userID,  userName);
+                    userDAO.updateInitials(userID, Ini);
+                    userDAO.updatePassword(userID, pass);
+                }
                 break;
             case 4:
                 //delete
