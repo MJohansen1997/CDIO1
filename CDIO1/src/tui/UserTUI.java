@@ -28,7 +28,7 @@ public class UserTUI {
                 System.out.println("Choose your initials. It must be an integer between 2 and 4");
                 Ini = input.nextLine();
                 System.out.println("Enter your role");
-                role = input.nextLine();
+                String role = input.nextLine();
 
                 userDAO.createUser(user);
                 System.out.println("Your password is:" + generate());
