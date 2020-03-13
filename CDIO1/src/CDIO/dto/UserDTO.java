@@ -12,10 +12,18 @@ public class UserDTO implements Serializable{
 	private String ini;                 
 	private List<String> roles;
 	private CDIO.dto.passwordGenerator passwordGenerator = new passwordGenerator();
+
 	public UserDTO(int userId, String userName, String password,  String ini) {
 		this.userId = userId;
 		this.userName = userName;
 		this.password = password;
+		this.ini = ini;
+	}
+
+	public UserDTO(int userId, String userName,  String ini) {
+		this.userId = userId;
+		this.userName = userName;
+		this.password = passwordGenerator.generatePassword();
 		this.ini = ini;
 	}
 

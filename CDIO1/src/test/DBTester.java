@@ -1,17 +1,17 @@
-package CDIO.test;
+package test;
 
 
 //import CDIO.dal.UserDAODiscImpl;
 
 /*
 public class DBTester {
-	//TODO refactor as JUnit CDIO.test???
+	//TODO refactor as JUnit test???
 	public static void CDIO.main(String[] args) {
 		//IUserDAO iDAO = new UserDAODiscImpl();
 		UserDTO newUser = new UserDTO();
 		//printUsers(iDAO);
-		//TODO CDIO.test new fields...
-		newUser.setIni("CDIO.test");
+		//TODO test new fields...
+		newUser.setIni("test");
 		newUser.addRole("Admin");
 		newUser.setUserName("testName");
 		newUser.setUserId(0);

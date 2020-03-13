@@ -37,8 +37,7 @@ public class UserTUI {
                 String ini = input.nextLine();
 //                System.out.println("Enter your role");
 //                String role = input.nextLine();
-                String passGene = passGen.generatePassword();
-                UserDTO user = new UserDTO(userID, userName, passGene, ini);
+                UserDTO user = new UserDTO(userID, userName, ini);
                 userDAO.createUser(user);
                 System.out.println(user);
                 break;
