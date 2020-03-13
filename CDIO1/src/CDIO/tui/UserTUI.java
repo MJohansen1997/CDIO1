@@ -91,7 +91,7 @@ public class UserTUI {
                 break;
             case 4:
                 //delete
-                System.out.println("Enter the userid of the user your want to delete");
+                System.out.println("Enter the userID of the user your want to delete");
                 userID = input.nextInt();
                 userDAO.deleteUser(userID);
                 break;

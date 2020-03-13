@@ -124,10 +124,10 @@ public class UserDAO implements IUserDAO {
 
         try {
             int nRowsDeleted = 0;
-            PreparedStatement preparedStatement = newCon.connection.prepareStatement("DELETE FROM userInformations WHERE name = ?;");
+            PreparedStatement preparedStatement = newCon.connection.prepareStatement("DELETE FROM userinformations WHERE userID = ?;");
             preparedStatement.setInt(1, ID);
             nRowsDeleted += preparedStatement.executeUpdate();
-            System.out.println("Inserted " + nRowsDeleted + " row(s) of data.");
+            System.out.println("Deleted " + nRowsDeleted + " row(s) of data.");
         } catch (SQLException e) {
             throw new SQLException("Encountered an error when executing given sql statement.", e);
         }
