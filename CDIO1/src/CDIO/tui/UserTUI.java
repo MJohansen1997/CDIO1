@@ -3,8 +3,11 @@ package CDIO.tui;
 import CDIO.dal.IUserDAO;
 import CDIO.dal.UserDAO;
 import CDIO.dto.UserDTO;
+import CDIO.dto.passwordGenerator;
 
+import javax.swing.*;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserTUI {
@@ -15,31 +18,39 @@ public class UserTUI {
     public void chooseMenu() throws IUserDAO.DALException, SQLException, ClassNotFoundException {
         Scanner input = new Scanner(System.in);
         UserDAO userDAO = new UserDAO();
+        passwordGenerator passGen = new passwordGenerator();
 
-        int choice = input.nextInt();
 
         System.out.println("Welcome to the CDIO.main menu. Write the menu-nr. you will like to choose" +
                 "\nThe menus are:\n 1. Create\n 2. Show\n 3. Update \n 4. Exit");
+        int choice = input.nextInt();
 
         switch (choice) {
             case 1:
                 //create
                 System.out.println("Choose your UserID. It must be an integer between 11 and 99");
                 int userID = input.nextInt();
+                input.nextLine();
                 System.out.println("Type your Username. It may be min 2 or max 20 characters");
                 String userName = input.nextLine();
                 System.out.println("Choose your initials. It must be an integer between 2 and 4");
                 String ini = input.nextLine();
 //                System.out.println("Enter your role");
 //                String role = input.nextLine();
-                UserDTO user = new UserDTO(userID, userName, ini);
+                String passGene = passGen.generatePassword();
+                UserDTO user = new UserDTO(userID, userName, passGene, ini);
                 userDAO.createUser(user);
-                System.out.println("Your password is:" + userDAO.getUser(userID).getPassword());
+                System.out.println(user);
                 break;
             case 2:
                 //show
                 System.out.println("The list of all users");
-                userDAO.getUserList();
+                List<UserDTO> allusers = userDAO.getUserList();
+
+                for (int i = 0; i < allusers.size(); i++) {
+                    System.out.println(allusers.get(i));
+                }
+
                 break;
             case 3:
                 //update
@@ -50,6 +61,7 @@ public class UserTUI {
                     System.out.println("What information do you want to update? enter the number value of the options" +
                             "\n1. Username\n2. Initials\n3. Password\n4. All informations\n5. Exit");
                     int updatenr = input.nextInt();
+                    input.nextLine();
                     if (updatenr == 1) {
                         System.out.println("Please write the wanted userName.");
                         userName = input.nextLine();

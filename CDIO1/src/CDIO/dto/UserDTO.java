@@ -1,7 +1,6 @@
 package CDIO.dto;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserDTO implements Serializable{
@@ -12,20 +11,12 @@ public class UserDTO implements Serializable{
 	private String password;
 	private String ini;                 
 	private List<String> roles;
-	private PasswordGenerator passwordGenerator = new PasswordGenerator();
-	public UserDTO(int userId, String userName, String ini) {
-		this.userId = userId;
-		this.userName = userName;
-		this.password = passwordGenerator.generatePassword();
-		this.ini = ini;
-		this.roles = new ArrayList<>();
-	}
-	public UserDTO(int userId, String userName, String ini, String password) {
+	private CDIO.dto.passwordGenerator passwordGenerator = new passwordGenerator();
+	public UserDTO(int userId, String userName, String password,  String ini) {
 		this.userId = userId;
 		this.userName = userName;
 		this.password = password;
 		this.ini = ini;
-		this.roles = new ArrayList<>();
 	}
 
 
@@ -73,7 +64,7 @@ public class UserDTO implements Serializable{
 
 	@Override
 	public String toString() {
-		return "UserDTO [userId=" + userId + ", userName=" + userName + ", ini=" + ini + ", roles=" + roles + "]";
+		return "UserDTO [userId=" + userId + ", userName=" + userName + ", pass=" + password + ", ini=" + ini + "]";
 	}
 
 }

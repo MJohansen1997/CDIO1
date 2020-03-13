@@ -23,8 +23,6 @@ public class MySQLCon {
             throw new ClassNotFoundException("MariaDB JDBC driver NOT detected in library path.", e);
         }
 
-        System.out.println("MariaDB JDBC driver detected in library path.");
-
 
         // Initialize connection object
         try {

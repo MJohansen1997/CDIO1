@@ -2,7 +2,7 @@ package CDIO.dto;
 
 import java.util.Random;
 
-public class PasswordGenerator {
+public class passwordGenerator {
     private String password;
     private char randomChar;
     private int randomInt;
