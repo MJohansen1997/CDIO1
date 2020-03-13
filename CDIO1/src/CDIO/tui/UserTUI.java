@@ -22,7 +22,7 @@ public class UserTUI {
 
 
         System.out.println("Welcome to the CDIO.main menu. Write the menu-nr. you will like to choose" +
-                "\nThe menus are:\n 1. Create\n 2. Show\n 3. Update \n 4. Exit");
+                "\nThe menus are:\n 1. Create\n 2. Show\n 3. Update \n 4. Delete \n 5. Exit");
         int choice = input.nextInt();
 
         switch (choice) {
