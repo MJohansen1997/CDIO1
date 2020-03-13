@@ -1,11 +1,9 @@
-package dal;
+package CDIO.dal;
 
 import java.sql.*;
-import java.util.List;
 import java.util.Properties;
 
 public class MySQLCon {
-
     // Initialize connection variables.
     String host = "universitydtudb.mysql.database.azure.com";
     String database = "cdiosampledb";
@@ -13,6 +11,9 @@ public class MySQLCon {
     String password = "2GpZ#P/h{&";
     Connection connection = null;
 
+    MySQLCon() throws SQLException, ClassNotFoundException {
+        setup();
+    }
     // check that the driver is installed
     public void setup() throws SQLException, ClassNotFoundException {
         try {

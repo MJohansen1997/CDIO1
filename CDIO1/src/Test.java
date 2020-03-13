@@ -1,3 +1,5 @@
+import CDIO.PasswordGenerator;
+
 public class Test {
     public static void main(String[] args) {
         PasswordGenerator passObj = new PasswordGenerator();

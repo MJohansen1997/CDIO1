@@ -1,3 +1,5 @@
+package CDIO;
+
 import java.util.Random;
 
 public class PasswordGenerator {

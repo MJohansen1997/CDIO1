@@ -1,16 +1,17 @@
-package dal;
+package CDIO.dal;
 
-import dto.UserDTO;
+import CDIO.dto.UserDTO;
 
 import java.sql.ResultSet;
 import java.sql.*;
 import java.util.HashSet;
 import java.util.List;
 
-import static javax.swing.text.html.parser.DTDConstants.ID;
-
 public class UserDAO implements IUserDAO {
     MySQLCon newCon = new MySQLCon();
+
+    public UserDAO() throws SQLException, ClassNotFoundException {
+    }
 
     @Override
     public UserDTO getUser(int userId) throws DALException, SQLException, ClassNotFoundException {
@@ -143,11 +144,7 @@ public class UserDAO implements IUserDAO {
     }
 
     private UserDTO extractUserFromResultSet(ResultSet rs) throws SQLException {
-        UserDTO user = new UserDTO();
-        user.setUserId( rs.getInt("userID") );
-        user.setUserName( rs.getString("userName") );
-        user.setPassword( rs.getString("pass") );
-        user.setIni(rs.getString("ini"));
+        UserDTO user = new UserDTO(rs.getInt("userID"), rs.getString("userName"), rs.getString("ini"), rs.getString("pass"));
         return user;
     }
 
