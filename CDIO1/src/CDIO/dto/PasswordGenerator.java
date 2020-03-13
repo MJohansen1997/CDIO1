@@ -1,4 +1,4 @@
-package CDIO;
+package CDIO.dto;
 
 import java.util.Random;
 

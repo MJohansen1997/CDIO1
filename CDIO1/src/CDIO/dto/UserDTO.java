@@ -12,11 +12,11 @@ public class UserDTO implements Serializable{
 	private String password;
 	private String ini;                 
 	private List<String> roles;
-	
+	private PasswordGenerator passwordGenerator = new PasswordGenerator();
 	public UserDTO(int userId, String userName, String ini) {
 		this.userId = userId;
 		this.userName = userName;
-		this.password = password;
+		this.password = passwordGenerator.generatePassword();
 		this.ini = ini;
 		this.roles = new ArrayList<>();
 	}

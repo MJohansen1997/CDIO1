@@ -1,4 +1,4 @@
-import CDIO.PasswordGenerator;
+import CDIO.dto.PasswordGenerator;
 
 public class Test {
     public static void main(String[] args) {
